@@ -10,7 +10,6 @@ import Game from "../components/Game";
 //Styling and animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { newGamesURL } from "../api";
 
 const Home = () => {
   //GET DATA FROM STATE

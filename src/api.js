@@ -34,7 +34,16 @@ const upcoming_games = `games?dates=${currentDate},${nextYear}&ordering=-added&p
 //New Games
 const new_games = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 
-//URL COMPOSITION
+//URL COMPOSITION --------------------------------
+
+//GAMES LIST URLs
 export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${new_games}`;
+
+//GAME DETAILS URL
+export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}`;
+
+//GAME SCREENSHOTS URL
+export const gameScreenshotURL = (game_id) =>
+  `${base_url}games/${game_id}/screenshots`;
