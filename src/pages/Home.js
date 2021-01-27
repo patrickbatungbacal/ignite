@@ -6,6 +6,7 @@ import { loadGames } from "../actions/gamesAction";
 
 //import components for HOME page
 import Game from "../components/Game";
+import GameDetail from "../components/GameDetail";
 
 //Styling and animation
 import styled from "styled-components";
@@ -14,7 +15,6 @@ import { motion } from "framer-motion";
 const Home = () => {
   //GET DATA FROM STATE
   const { popular, newGames, upcoming } = useSelector((state) => state.games);
-  console.log(popular);
 
   //FIRE FETCH DATA FROM API HERE
   const dispatch = useDispatch();
@@ -24,6 +24,7 @@ const Home = () => {
 
   return (
     <GameList>
+      <GameDetail />
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game) => (
