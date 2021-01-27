@@ -38,7 +38,7 @@ const GameDetail = () => {
         </Description>
 
         <div className="gallery">
-          {screenshots.map((data) => (
+          {screenshots.results.map((data) => (
             <img key={data.id} src={data.image} alt="screenies" />
           ))}
         </div>
@@ -77,7 +77,6 @@ const Detail = styled(motion.div)`
   position: absolute;
   left: 10%;
   color: black;
-
   img {
     width: 100%;
   }

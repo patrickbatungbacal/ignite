@@ -12,9 +12,13 @@ import GameDetail from "../components/GameDetail";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+//React Router
+import { useLocation } from "react-router-dom";
+
 const Home = () => {
-  //GET DATA FROM STATE
-  const { popular, newGames, upcoming } = useSelector((state) => state.games);
+  //get current location
+  const location = useLocation();
+  const pathId = location.pathname.split("/")[2];
 
   //FIRE FETCH DATA FROM API HERE
   const dispatch = useDispatch();
@@ -22,9 +26,12 @@ const Home = () => {
     dispatch(loadGames());
   }, [dispatch]);
 
+  //GET DATA FROM STATE
+  const { popular, newGames, upcoming } = useSelector((state) => state.games);
+
   return (
     <GameList>
-      <GameDetail />
+      {pathId && <GameDetail />}
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game) => (
