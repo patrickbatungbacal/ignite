@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 //React Router
 import { useHistory } from "react-router-dom";
+import { smallImage } from "../util";
 
 const GameDetail = () => {
   const history = useHistory();
@@ -47,7 +48,10 @@ const GameDetail = () => {
             </Stats>
 
             <Media>
-              <img src={game.background_image} alt="background" />
+              <img
+                src={smallImage(game.background_image, 1280)}
+                alt="background"
+              />
             </Media>
 
             <Description>
@@ -56,7 +60,11 @@ const GameDetail = () => {
 
             <div className="gallery">
               {screenshots.results.map((data) => (
-                <img key={data.id} src={data.image} alt="screenies" />
+                <img
+                  key={data.id}
+                  src={smallImage(data.image, 1280)}
+                  alt="screenies"
+                />
               ))}
             </div>
           </Detail>

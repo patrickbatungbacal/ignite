@@ -1,4 +1,5 @@
 import React from "react";
+import { smallImage } from "../util";
 
 //Styling and animation
 import styled from "styled-components";
@@ -24,7 +25,7 @@ const Game = ({ name, released, image, id }) => {
       <Link to={`/game/${id}`}>
         <h3>{name}</h3>
         <p>{released}</p>
-        <img src={image} alt={name} />
+        <img src={smallImage(image, 640)} alt={name} />
       </Link>
     </StyledGame>
   );
