@@ -11,6 +11,7 @@ import GameDetail from "../components/GameDetail";
 //Styling and animation
 import styled from "styled-components";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { fadeIn } from "../animations";
 
 //React Router
 import { useLocation } from "react-router-dom";
@@ -32,7 +33,7 @@ const Home = () => {
   );
 
   return (
-    <GameList>
+    <GameList variants={fadeIn} initial="hidden" animate="show">
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {pathId && <GameDetail pathId={pathId} />}
@@ -51,23 +52,23 @@ const Home = () => {
                 />
               ))}
             </Games>
-
-            <h2>Upcoming Games</h2>
-            <Games>
-              {upcoming.map((game) => (
-                <Game
-                  name={game.name}
-                  released={game.released}
-                  id={game.id}
-                  image={game.background_image}
-                  key={game.id}
-                />
-              ))}
-            </Games>
           </div>
         ) : (
           ""
         )}
+
+        <h2>Upcoming Games</h2>
+        <Games>
+          {upcoming.map((game) => (
+            <Game
+              name={game.name}
+              released={game.released}
+              id={game.id}
+              image={game.background_image}
+              key={game.id}
+            />
+          ))}
+        </Games>
 
         <h2>Popular Games</h2>
         <Games>
