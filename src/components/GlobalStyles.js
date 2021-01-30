@@ -18,17 +18,29 @@ const GlobalStyles = createGlobalStyle`
         &::-webkit-scrollbar-track {
             background: white;
         }
+
+        
     }
 
     body {
         font-family: 'Montserrat', sans-serif;
         width: 100%;
-    }
 
     h2 {
         font-size: 3rem;
         font-family: 'Abril Fatface', cursive;
         font-weight: lighter;
+
+                
+    @media (max-width: 1300px) {
+        font-size: 2rem;
+        text-align: center;
+        }
+
+    @media (max-width: 750px) {
+        font-size: 2rem;
+        text-align: center;
+        }
     }
 
     h3 {

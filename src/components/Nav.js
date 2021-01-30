@@ -53,6 +53,19 @@ const StyledNav = styled(motion.div)`
     border: none;
     margin-top: 1rem;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 1300px) {
+      width: 60%;
+    }
+
+    @media (max-width: 750px) {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    margin-bottom: 0%;
   }
 
   button {
