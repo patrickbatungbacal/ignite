@@ -55,6 +55,8 @@ const GameDetail = ({ pathId }) => {
         return nintendo;
       case "iOS":
         return apple;
+      case "macOS":
+        return apple;
       default:
         return gamepad;
     }
