@@ -7,12 +7,6 @@ export const fadeIn = {
     transition: {
       duration: 1,
     },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.75,
-      },
-    },
   },
 };
 
@@ -26,12 +20,6 @@ export const popey = {
     scale: 1,
     transition: {
       duration: 1,
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.75,
-      },
     },
   },
 };

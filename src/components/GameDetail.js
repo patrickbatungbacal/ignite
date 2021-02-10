@@ -4,6 +4,10 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+//Tippy for tooltips
+import Tippy from "@tippy.js/react";
+import "tippy.js/dist/tippy.css";
+
 //Redux
 import { useSelector } from "react-redux";
 
@@ -90,11 +94,17 @@ const GameDetail = ({ pathId }) => {
                 <h3>Platforms</h3>
                 <Platforms>
                   {game.platforms.map((data) => (
-                    <img
-                      key={data.platform.id}
-                      alt={data.platform.name}
-                      src={getPlatform(data.platform.name)}
-                    ></img>
+                    <Tippy
+                      key={`tip ${data.platform.id}`}
+                      content={data.platform.name}
+                      placement="bottom"
+                    >
+                      <img
+                        alt={data.platform.name}
+                        src={getPlatform(data.platform.name)}
+                        key={data.platform.id}
+                      />
+                    </Tippy>
                   ))}
                 </Platforms>
               </Info>
